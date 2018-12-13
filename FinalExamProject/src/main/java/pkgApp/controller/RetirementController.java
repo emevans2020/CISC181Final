@@ -60,7 +60,6 @@ public class RetirementController implements Initializable {
 	@FXML
 	public void btnClear(ActionEvent event) {
 		System.out.println("Clear pressed");
-		System.out.println("Clear pressed");
 		txtYearsToWork.setText("");
 		txtAnnualRetWorking.setText("");
 		txtYearsRetired.setText("");
@@ -74,6 +73,7 @@ public class RetirementController implements Initializable {
 //	TODO: Call AmountToSave and TotalAmountSaved and populate 
 	@FXML
 	public void btnCalculate(ActionEvent event) {
+		System.out.println("Calculate Pressed!");
 		Retirement rtm = new Retirement();
 		/**
 		 * setting the options to the correct inputs
