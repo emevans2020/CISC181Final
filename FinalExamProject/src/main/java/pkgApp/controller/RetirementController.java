@@ -9,12 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import pkgApp.RetirementApp;
+import pkgCore.Retirement;
 
 public class RetirementController implements Initializable {
 
 		
 	private RetirementApp mainApp = null;
-	
 	
 	@FXML
 	private Label lblSaveEachMonth;
@@ -71,10 +71,20 @@ public class RetirementController implements Initializable {
 		lblNeedToSave.setText("");
 	}
 	
+//	TODO: Call AmountToSave and TotalAmountSaved and populate 
 	@FXML
 	public void btnCalculate(ActionEvent event) {
+		Retirement rtm = new Retirement();
+		rtm.setiYearsToWork(Integer.parseInt(txtYearsToWork.getText()));
+		rtm.setdAnnualReturnWorking(Double.parseDouble(txtAnnualRetWorking.getText()));
 		
-		//	TODO: Call AmountToSave and TotalAmountSaved and populate 
+		
+		/**
+		 * setting each label to type text to display
+		 */
+		lblSaveEachMonth.setText(Double.toString(rtm.AmountToSave()));
+		lblNeedToSave.setText(Double.toString(rtm.TotalAmountSaved())); 
+		
 		
 	}
 	
