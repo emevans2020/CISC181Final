@@ -93,7 +93,7 @@ public class Retirement {
 		 */
 	public double TotalAmountSaved()
 	{
-		double pv = FinanceLib.pv(dAnnualReturnWorking/12, iYearsToWork*12, dRequiredIncome - dMonthlySSI, 0, false);
+		double pv = FinanceLib.pv(dAnnualReturnRetired/12, iYearsRetired*12, Math.abs(dRequiredIncome - dMonthlySSI), 0, false);
 		return pv;
 	}
 }

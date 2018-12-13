@@ -75,17 +75,21 @@ public class RetirementController implements Initializable {
 	@FXML
 	public void btnCalculate(ActionEvent event) {
 		Retirement rtm = new Retirement();
+		/**
+		 * setting the options to the correct inputs
+		 */
 		rtm.setiYearsToWork(Integer.parseInt(txtYearsToWork.getText()));
 		rtm.setdAnnualReturnWorking(Double.parseDouble(txtAnnualRetWorking.getText()));
-		
-		
+		rtm.setiYearsRetired(Integer.parseInt(txtYearsRetired.getText()));
+		rtm.setdAnnualReturnRetired(Double.parseDouble(txtAnnualRetRetired.getText()));
+		rtm.setdRequiredIncome(Double.parseDouble(txtReqIncome.getText()));
+		rtm.setdMonthlySSI(Double.parseDouble(txtMonthlySSI.getText()));
 		/**
 		 * setting each label to type text to display
 		 */
 		lblSaveEachMonth.setText(Double.toString(rtm.AmountToSave()));
-		lblNeedToSave.setText(Double.toString(rtm.TotalAmountSaved())); 
-		
-		
+		lblNeedToSave.setText(Double.toString(Math.abs(rtm.TotalAmountSaved()))); 
+			
 	}
 	
 }
