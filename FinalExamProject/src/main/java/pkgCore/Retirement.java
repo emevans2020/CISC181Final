@@ -4,11 +4,28 @@ import org.apache.poi.ss.formula.functions.*;
 
 public class Retirement {
 
+	public Retirement() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Retirement(int iYearsToWork, double dAnnualReturnWorking, int iYearsRetired, double dAnnualReturnRetired,
+			double dRequiredIncome, double dMonthlySSI) {
+		super();
+		this.iYearsToWork = iYearsToWork;
+		this.dAnnualReturnWorking = dAnnualReturnWorking;
+		this.iYearsRetired = iYearsRetired;
+		this.dAnnualReturnRetired = dAnnualReturnRetired;
+		this.dRequiredIncome = dRequiredIncome;
+		this.dMonthlySSI = dMonthlySSI;
+	}
+
 	private int iYearsToWork;
 	private double dAnnualReturnWorking;
 	private int iYearsRetired;
 	private double dAnnualReturnRetired;
-	
+	private double dRequiredIncome;
+	private double dMonthlySSI;
 	
 	public int getiYearsToWork() {
 		return iYearsToWork;
@@ -57,9 +74,6 @@ public class Retirement {
 	public void setdMonthlySSI(double dMonthlySSI) {
 		this.dMonthlySSI = dMonthlySSI;
 	}
-
-	private double dRequiredIncome;
-	private double dMonthlySSI;
 		
 	
 	/** Determine the amount to save each month based on TotalAmountSaved, YearsToWork
